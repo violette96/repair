@@ -4,9 +4,11 @@ var close = document.querySelector('#close');
 
 button.addEventListener('click', function() {
   modal.classList.add('modal_active');
-  setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
+  setTimeout(closed, 5000);
 });
 
-close.addEventListener('click', function() {
+close.addEventListener('click', closed());
+function closed() {
+
    modal.classList.remove('modal_active');
-})
+};
