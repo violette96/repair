@@ -423,9 +423,18 @@ img {
 }
 
 .modal-dialog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   margin: auto;
-  max-width: 450px;
+  max-width: 1000px;
   width: 90%;
   min-width: 200px;
   background-color: #fff;
@@ -436,5 +445,14 @@ img {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 10px;
+  padding: 15px;
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
