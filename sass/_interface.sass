@@ -28,6 +28,7 @@ img
  &-title 
    font-size: 25px
    +bold
+   text-align: center
  &-subtitle
     font-size: 16px
     display: block
@@ -36,11 +37,17 @@ img
    padding: 20px 26px
    font-size: 15px
    border-radius: 10px
+.arrows
+  &__left, &__right
+    &:hover
+      cursor: pointer
 .button-up 
   display: flex
   right: 0
   margin: 0
   position: fixed 
+  &:hover
+      cursor: pointer
   bottom: 50px
   outline:none
   width: 100px
