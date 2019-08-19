@@ -45,6 +45,10 @@ img {
     max-width: 580px;
     width: 90%;
   }
+  .section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 .button {
@@ -52,13 +56,21 @@ img {
   background-color: #ffd200;
   border: none;
   padding: 18px 30px;
-  font-family: 'Museo Sans Bold', sans-serif;
-  font-weight: 700;
+  outline: none;
 }
 
 .button:hover {
-  background-color: #ffe04d;
+  background-color: #ffdb33;
   cursor: pointer;
+  outline: none;
+}
+
+.button:active {
+  outline: none;
+}
+
+.button:focus {
+  outline: none;
 }
 
 .section {
@@ -66,10 +78,11 @@ img {
 }
 
 .section-title {
-  font-size: 25px;
+  font-size: 24px;
   font-family: 'Museo Sans Bold', sans-serif;
   font-weight: 700;
   text-align: center;
+  max-width: 500px;
 }
 
 .section-subtitle {
@@ -104,19 +117,18 @@ img {
   padding: 0px 0 0 28px;
   background: no-repeat 7px 11px #ffffff;
   border-radius: 0 4px 4px 0;
-  border-radius--webkit-border-radius: 0 4px 4px 0;
-  border-radius--moz-border-radius: 0 4px 4px 0;
-  border-radius--o-border-radius: 0 4px 4px 0;
   -webkit-box-shadow: 0 2px 4px #999;
           box-shadow: 0 2px 4px #999;
-  box-shadow--webkit-box-shadow: 0 2px 4px #999;
-  box-shadow--moz-box-shadow: 0 2px 4px #999;
-  box-shadow--o-box-shadow: 0 2px 4px #999;
-  box-shadow-cursor: pointer;
+  cursor: pointer;
 }
 
 .button-up:hover {
   cursor: pointer;
+}
+
+.error {
+  display: block;
+  margin-bottom: 10px;
 }
 
 /* Импорт стилей шапки */
@@ -463,10 +475,7 @@ img {
 }
 
 .success {
-  color: #155724;
-  background-color: #d4edda;
-  border: 1px solid #c3e6cb;
-  border-radius: 10px;
+  color: #ffd200;
   padding: 15px;
   display: none;
 }
@@ -478,7 +487,6 @@ img {
 }
 
 .portfolio__title {
-  max-width: 500px;
   margin: auto;
   margin-bottom: 100px;
 }
@@ -497,5 +505,436 @@ img {
 
 .slider__image {
   margin: auto;
+}
+
+/* Стили для блока с ценами */
+.price__title {
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.price__subtitle {
+  margin-bottom: 59px;
+  text-align: center;
+}
+
+.price__card {
+  margin-bottom: 30px;
+}
+
+.card {
+  text-align: center;
+  border: 1px solid #e8e8e8;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover .card__image:before {
+  opacity: 1;
+}
+
+.card__text {
+  padding: 40px;
+}
+
+.card__title {
+  margin-top: 0;
+}
+
+.card__img {
+  display: block;
+}
+
+.card__image {
+  position: relative;
+  display: block;
+}
+
+.card__image::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#ffd200), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to top, #ffd200 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.card__link {
+  display: inline-block;
+  font-family: 'Museo Sans Bold', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  color: #333333;
+  font-size: 16px;
+  position: relative;
+}
+
+.card__link:hover:after {
+  height: 12px;
+}
+
+.card__link:after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  width: 100%;
+  height: 3px;
+  display: block;
+  background-color: #ffd200;
+  z-index: -1;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin: auto;
+    margin-bottom: 30px;
+  }
+}
+
+/* Стили для блока 5 шагов до ремонта */
+.step {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  text-align: center;
+  position: relative;
+}
+
+.step:after {
+  content: '';
+  position: absolute;
+  width: 72px;
+  height: 25px;
+  top: -10px;
+  right: -15%;
+  background: url("../img/arrow-steps.png") no-repeat center;
+}
+
+.step:last-child:after {
+  display: none;
+}
+
+.step__image {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #ffd200;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.step__text {
+  font-size: 14px;
+  max-width: 150px;
+  margin: auto;
+}
+
+.steps__title {
+  margin: auto;
+  margin-bottom: 59px;
+}
+
+.steps__subtitle {
+  text-align: center;
+  margin-bottom: 58px;
+}
+
+.steps-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .step {
+    margin-bottom: 30px;
+  }
+  .step:after {
+    display: none;
+  }
+  .steps-block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 1200px) {
+  .step {
+    margin-bottom: 30px;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+  .step:after {
+    display: none;
+  }
+  .steps-block {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+/* Стили для блока c формой */
+.brif {
+  background-image: url("../img/brif-color.png"), url("../img/brif-bg.jpg");
+  background-position: left center, center right;
+  background-size: 50%, contain;
+  background-repeat: repeat-y, no-repeat;
+}
+
+.brif-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.brif__interview {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+.brif__form {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  padding-left: 200px;
+  text-align: center;
+  position: relative;
+}
+
+.brif__input {
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 15px;
+}
+
+.brif__button {
+  margin-top: 0;
+  height: 70px;
+  width: 100%;
+  max-width: 370px;
+  margin-bottom: 30px;
+}
+
+.interview {
+  padding-right: 70px;
+}
+
+.interview__title {
+  font-size: 22px;
+  font-family: 'Museo Sans Bold', sans-serif;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.interview__subtitle {
+  display: block;
+  margin-bottom: 95px;
+  font-size: 16px;
+}
+
+.interview-list {
+  list-style: none;
+  padding: 0;
+}
+
+.interview-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 25px;
+  font-family: 'Museo Sans Bold', sans-serif;
+  font-weight: 700;
+}
+
+.interview-list__counter {
+  display: inline-block;
+  text-align: center;
+  margin-right: 30px;
+  line-height: 35px;
+  width: 35px;
+  height: 35px;
+  border: 2px solid #333333;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.interview-list__text {
+  max-width: 400px;
+}
+
+.form__title {
+  font-size: 22px;
+  font-family: 'Museo Sans Bold', sans-serif;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.form__subtitle {
+  display: block;
+  margin-bottom: 95px;
+  font-size: 16px;
+}
+
+.form__description {
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  .brif__form {
+    padding-left: 30px;
+  }
+  .interview {
+    padding-right: 30px;
+  }
+  .interview__title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .interview__subtitle {
+    margin-bottom: 15px;
+  }
+  .interview-list__text {
+    font-size: 14px;
+    max-width: 300px;
+  }
+  .interview-list__counter {
+    margin-right: 20px;
+  }
+  .form__title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .form__subtitle {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brif {
+    background-image: url("../img/brif-color.png"), url("../img/brif-bg.jpg");
+    background-position: top center, center bottom;
+    background-size: 100% 50%, cover;
+    background-repeat: repeat-x, no-repeat;
+  }
+  .brif-block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .brif__form {
+    margin-top: 80px;
+  }
+}
+
+/* Стили для блока c картой*/
+.footer {
+  position: relative;
+}
+
+.map {
+  width: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.contacts {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  padding-top: 100px;
+  padding-left: 200px;
+}
+
+.contacts__title {
+  font-family: 'Museo Sans Bold', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.4;
+  margin-bottom: 100px;
+}
+
+.contacts-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.contacts-list {
+  padding: 0;
+  list-style: none;
+}
+
+.contacts-list__icon {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 23px;
+}
+
+.contacts-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 39px;
+}
+
+.contacts-list__phone {
+  text-decoration: none;
+  font-family: 'Museo Sans Bold', sans-serif;
+  font-weight: 700;
+  font-weight: 700;
+  color: #000;
+}
+
+b {
+  font-family: 'Museo Sans Bold', sans-serif;
+  font-weight: 700;
 }
 /*# sourceMappingURL=style.css.map */
